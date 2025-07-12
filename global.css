@@ -1,79 +1,107 @@
 /* Reset e configurações globais */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
 }
 
 html {
-    scroll-behavior: smooth;
+	scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Arial', sans-serif;
-    line-height: 1.6;
-    color: #333;
-    background-color: #f8f9fa;
+	font-family: 'Arial', sans-serif;
+	line-height: 1.6;
+	color: #333;
+	background-color: #181818;
 }
 
 /* Tipografia */
 h1, h2, h3, h4, h5, h6 {
-    margin-bottom: 1rem;
-    font-weight: 600;
+	margin-bottom: 1rem;
+	font-weight: 600;
 }
 
 p {
-    margin-bottom: 1rem;
+	margin-bottom: 1rem;
 }
 
 /* Links */
 a {
-    text-decoration: none;
-    color: inherit;
-    transition: all 0.3s ease;
+	text-decoration: none;
+	color: inherit;
+	transition: all 0.3s ease;
+}
+
+.title .gradientText { /* Deixar qualquer texto com gradiente de fundo */
+	background-image: linear-gradient(to right, #7300ff, #ff00ee);
+    background-clip: text;          /* Recorta o gradiente para o formato do texto */
+    -webkit-background-clip: text;  /* Prefixo para navegadores WebKit (Chrome, Safari) */
+    color: transparent;             /* Torna o texto transparente para mostrar o gradiente */
 }
 
 /* Botões */
 .btn {
-    display: inline-block;
-    padding: 12px 24px;
-    border-radius: 5px;
-    font-weight: 500;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    border: none;
-}
-
-.btn.primary {
-    background-color: #007bff;
-    color: white;
-}
-
-.btn.primary:hover {
-    background-color: #0056b3;
-    transform: translateY(-2px);
+	display: inline-block;
+	text-align: center;
+	cursor: pointer;
+	transition: all 0.3s ease;
+	position: relative;
+	z-index: 1;
+	border-radius: 100px;
+	overflow: hidden;
+	background-color: transparent;
+	text-decoration: none;
+	color: #aeaeae;
 }
 
 .btn.secondary {
-    background-color: transparent;
-    color: #007bff;
-    border: 2px solid #007bff;
+	padding: 15px;
+	width: 250px;
+	font-size: larger;
+	text-align: center;
 }
 
+/* ::before = outline degradê */
+.btn.secondary::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	padding: 2px;
+	background: linear-gradient(135deg, #7300ff 0%, #ff00ee 100%);
+	border-radius: inherit;
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask-composite: exclude;
+	z-index: -1;
+}
+
+/* ::after = fundo interno */
+.btn.secondary::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: #181818;
+	border-radius: inherit;
+	z-index: -2;
+}
+
+/* Hover animation */
 .btn.secondary:hover {
-    background-color: #007bff;
-    color: white;
+	color: white;
+	text-shadow: 0 0 8px #7300FF;
+	transform: translateY(-2px);
 }
 
 /* Container para seções */
 section {
-    padding: 4rem 0;
+	padding: 4rem 0;
 }
 
 /* Utilitários */
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 2rem;
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 0 2rem;
 }
