@@ -1,0 +1,71 @@
+.landing-page .image {
+	position: absolute;
+	width: 578px;
+	height: 685px;
+	top: 193px;
+	left: 814px;
+}
+
+.landing-page .overlap {
+	position: relative;
+	height: 685px;
+}
+
+.landing-page .blur-effect {
+	position: absolute;
+	width: 578px;
+	height: 685px;
+	top: 0;
+	left: 0;
+}
+
+.landing-page .overlap-group {
+	border-radius: 150px;
+	position: relative;
+	height: 685px;
+}
+
+.landing-page .ellipse {
+	width: 344px;
+	height: 344px;
+	top: 40px;
+	left: 53px;
+	background-color: #ff00ee;
+	border-radius: 172px;
+	position: absolute;
+	opacity: 0.15;
+}
+
+.landing-page .ellipse-2 {
+	width: 349px;
+	height: 349px;
+	top: 151px;
+	left: 193px;
+	background-color: #7200ff;
+	border-radius: 174.5px;
+	position: absolute;
+	opacity: 0.15;
+}
+
+.landing-page .ellipse-3 {
+	width: 185px;
+	height: 185px;
+	top: 433px;
+	left: 212px;
+	background-color: #ff00ee;
+	border-radius: 92.5px;
+	position: absolute;
+	opacity: 0.15;
+}
+
+.landing-page .rectangle {
+	position: absolute;
+	width: 578px;
+	height: 685px;
+	top: 0;
+	left: 0;
+	background-color: #d9d9d900;
+	border-radius: 150px;
+	backdrop-filter: blur(20px) brightness(100%);
+	-webkit-backdrop-filter: blur(20px) brightness(100%);
+}
