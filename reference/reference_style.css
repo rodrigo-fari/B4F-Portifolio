@@ -125,11 +125,9 @@
 .landing-page .INTRO-main {
 	top: 164px;
 	text-shadow: 4px 4px 4px #ffffff26;
-	background: linear-gradient(
-	132deg,
-	rgba(255, 0, 238, 1) 0%,
-	rgba(115, 0, 255, 1) 100%
-	);
+	background: linear-gradient(132deg,
+			rgba(255, 0, 238, 1) 0%,
+			rgba(115, 0, 255, 1) 100%);
 	-webkit-background-clip: text !important;
 	background-clip: text;
 	-webkit-text-fill-color: transparent;
@@ -175,11 +173,9 @@
 	inset: 0;
 	padding: 1px;
 	border-radius: 100px;
-	background: linear-gradient(
-	90deg,
-	rgba(255, 0, 238, 1) 0%,
-	rgba(115, 0, 255, 1) 100%
-	);
+	background: linear-gradient(90deg,
+			rgba(255, 0, 238, 1) 0%,
+			rgba(115, 0, 255, 1) 100%);
 	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
 	-webkit-mask-composite: xor;
 	mask-composite: exclude;
@@ -218,11 +214,9 @@
 	inset: 0;
 	padding: 1px;
 	border-radius: 100px;
-	background: linear-gradient(
-	27deg,
-	rgba(255, 0, 238, 1) 0%,
-	rgba(115, 0, 255, 1) 100%
-	);
+	background: linear-gradient(27deg,
+			rgba(255, 0, 238, 1) 0%,
+			rgba(115, 0, 255, 1) 100%);
 	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
 	-webkit-mask-composite: xor;
 	mask-composite: exclude;

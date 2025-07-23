@@ -1,17 +1,17 @@
 Necessidades de implementação no projeto:
-	Separar o conteudo da HomePage em dois:
-		-Lado direito: (pictureRightSide)
-			Elípses roxo/rosa c/blur,
-			Foto de perfil.
-	Remover o espaçamento esntre sections.
-	Procurar icons Online:
-		-Procurar icons iguais ao do Figma,
-		-Alteração de cor dos icons.
-	Adicionar cards dos projetos:
-		-Card de projetos com imagem, titulo, descrição e link.
-		-Card de projetos responsivo.
-		-Card de projetos com hover.
-	Criar nova página de aboutMe dividida em seções:
-		-Quem sou,
-		-O que fiz e quero fazer,
-	Finalizar a página de contatos.
+  Separar o conteudo da HomePage em dois:
+    -Lado direito: (pictureRightSide)
+      Elípses roxo/rosa c/blur,
+      Foto de perfil.
+  Remover o espaçamento esntre sections.
+  Procurar icons Online:
+    -Procurar icons iguais ao do Figma,
+    -Alteração de cor dos icons.
+  Adicionar cards dos projetos:
+    -Card de projetos com imagem, titulo, descrição e link.
+    -Card de projetos responsivo.
+    -Card de projetos com hover.
+  Criar nova página de aboutMe dividida em seções:
+    -Quem sou,
+    -O que fiz e quero fazer,
+  Finalizar a página de contatos.
