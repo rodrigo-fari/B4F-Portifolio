@@ -1,11 +1,11 @@
-/* Header */
+
 header {
 	background-color: #181818;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	position: fixed;
+	z-index: 1000;
 	top: 0;
 	width: 100%;
-	z-index: 1000;
 	padding: 1rem 0;
 }
 
@@ -19,7 +19,8 @@ header .container {
 .logo {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem; /* Espaço para logo futura */
+	gap: 0.5rem;
+	/* Espaço para logo futura, lembrar de remover dps */
 	margin-right: auto;
 }
 
@@ -77,14 +78,11 @@ nav a:hover::after {
 	width: 100%;
 }
 
-/* Main content */
 main {
 	margin-top: 80px;
 }
 
-/* Hero Section */
-.hero {
-
+.home {
 	width: 50vw;
 	background-color: #181818;
 	color: white;
@@ -98,7 +96,7 @@ main {
 	justify-content: left;
 }
 
-.hero .title p {
+.home .title p {
 	text-align: left;
 	font-size: 4em;
 	font-weight: bolder;
@@ -121,7 +119,9 @@ main {
 }
 
 /* Seções */
-.aboutMe, .projects, .contact {
+.aboutMe,
+.projects,
+.contact {
 	padding: 0;
 	padding-left: 4rem;
 	height: 100vh;
@@ -130,7 +130,9 @@ main {
 	background-color: #181818;
 }
 
-.aboutMe h2, .projects h2, .contact h2 {
+.aboutMe h2,
+.projects h2,
+.contact h2 {
 	text-align: left;
 	font-size: 2.5rem;
 	margin-bottom: 1rem;
@@ -215,29 +217,29 @@ footer {
 		gap: 1rem;
 		position: static;
 	}
-	
+
 	nav {
 		position: static;
 		transform: none;
 	}
-	
+
 	nav ul {
 		gap: 1rem;
 	}
-	
-	.hero .title h1 {
+
+	.home .title h1 {
 		font-size: 2rem;
 	}
-	
-	.hero .title h2 {
+
+	.home .title h2 {
 		font-size: 1.2rem;
 	}
-	
+
 	.mainBtns {
 		flex-direction: column;
 		align-items: center;
 	}
-	
+
 	.footer-content {
 		flex-direction: column;
 		text-align: center;
