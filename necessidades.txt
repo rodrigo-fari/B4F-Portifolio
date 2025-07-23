@@ -1,10 +1,5 @@
 Necessidades de implementação no projeto:
 	Separar o conteudo da HomePage em dois:
-		-Lado esquerdo: (contentLeftSide)
-			Titulo principal,
-			WelcomeMessage,
-			Botão "Projects",
-			Botão "Get in Touch".
 		-Lado direito: (pictureRightSide)
 			Elípses roxo/rosa c/blur,
 			Foto de perfil.
