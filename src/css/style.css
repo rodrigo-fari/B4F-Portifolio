@@ -1,4 +1,3 @@
-
 /* 
 ===========================================================================================
 						PORTFÓLIO RODRIGO FARIA - CSS
@@ -18,25 +17,52 @@
 }
 
 html {
-	scroll-padding-top: 80px; /* Espaçamento para navegação fixa */
-	scroll-behavior: smooth; /* Rolagem suave entre seções */
+	scroll-padding-top: 80px;
+	/* Espaçamento para navegação fixa */
+	scroll-behavior: smooth;
+	/* Rolagem suave entre seções */
 }
 
 body {
 	font-family: 'Arial', sans-serif;
 	line-height: 1.6;
 	color: #333;
-	background-color: #181818; /* Fundo escuro principal */
+	background-color: #181818;
+	/* Fundo escuro principal */
+	position: relative;
+	/* Importante para permitir elementos filhos com position absolute/fixed */
+}
+
+/* Overlay escuro para garantir legibilidade do conteúdo */
+body::before {
+	content: '';
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(24, 24, 24, 0.7);
+	z-index: 1;
+	pointer-events: none;
 }
 
 /* Configurações básicas de tipografia */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	margin-bottom: 1rem;
 	font-weight: 600;
 }
 
 p {
-	margin-bottom: 1rem;
+	margin-bottom: 0;
+}
+
+.home .title p:not(:last-child) {
+	margin-bottom: 0;
 }
 
 a {
@@ -67,7 +93,8 @@ section {
 .title .gradientText {
 	background-image: linear-gradient(to right, #7300ff, #ff00ee);
 	background-clip: text;
-	-webkit-background-clip: text; /* Compatibilidade WebKit */
+	-webkit-background-clip: text;
+	/* Compatibilidade WebKit */
 	color: transparent;
 }
 
@@ -135,7 +162,8 @@ section {
 header {
 	background-color: #181818;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-	position: fixed; /* Header fixo no topo */
+	position: fixed;
+	/* Header fixo no topo */
 	z-index: 1000;
 	top: 0;
 	width: 100%;
@@ -180,7 +208,8 @@ header .container {
 nav {
 	position: absolute;
 	left: 50%;
-	transform: translateX(-50%); /* Centraliza o menu */
+	transform: translateX(-50%);
+	/* Centraliza o menu */
 }
 
 nav ul {
@@ -226,7 +255,8 @@ nav a:hover::after {
 */
 
 main {
-	margin-top: 80px; /* Compensa a altura do header fixo */
+	margin-top: 80px;
+	/* Compensa a altura do header fixo */
 }
 
 /* 
@@ -235,37 +265,51 @@ main {
 ===========================================================================================
 */
 
-.home {	background-color: #181818;
+.home {
+	background-color: transparent;
 	color: white;
 	display: flex;
 	align-items: center;
-	padding: 20vh 4rem 20vh 10rem;
-	min-height: 80vh;
+	justify-content: center;
+	padding: 0 4rem 0 10rem;
+	min-height: calc(100vh - 80px);
+	margin-top: -80px;
+	padding-top: 80px;
 	gap: 2rem;
+	position: relative;
+	z-index: 3;
 }
 
 /* Lado esquerdo - Conteúdo textual */
 .contentLeftSide {
 	display: flex;
 	flex-direction: column;
+	justify-content: center;
 	width: 50%;
 	flex: 1;
+}
+
+/* Container do título */
+.home .title {
+	margin-bottom: 1rem;
 }
 
 /* Título principal */
 .home .title p {
 	font-size: 4em;
 	font-weight: bolder;
-	margin-bottom: -1rem;
+	margin-bottom: 0;
+	line-height: 0.9;
 }
 
 /* Mensagem de boas-vindas */
 .welcomeMessage {
 	color: #aeaeae;
 	font-size: 1.3rem;
-	margin-bottom: 2rem;
-	margin-top: 1rem;
+	margin-bottom: 0;
+	margin-top: 0.5rem;
 	max-width: 800px;
+	line-height: 1.5;
 }
 
 /* Container dos botões principais */
@@ -273,24 +317,21 @@ main {
 	display: flex;
 	gap: 2rem;
 	flex-wrap: wrap;
-	margin-top: 2rem;
+	margin-top: 2.5rem;
 }
 
-/* Lado direito - Espaço para foto/elementos visuais */
-.pictureRightSide {
-	display: flex;
-	padding-top: 200px;
-	width: 50%;
-	flex: 1;
-	align-items: center;
-	justify-content: center;
-	min-height: 400px;
-}
-
-.profile-wrapper {
-	position: relative;
-	width: 300px;
-	height: 300px;
+/* Círculos de fundo animados */
+.background-circles {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+	z-index: 2;
+	overflow: hidden;
+	transform-origin: center center;
+	/* Rotação ao redor do centro da tela */
 }
 
 /* Círculos com blur */
@@ -299,44 +340,64 @@ main {
 	border-radius: 50%;
 	filter: blur(80px);
 	opacity: 0.6;
-	z-index: 0;
+	transition: all 0.3s ease-out;
+	transform-origin: center center;
 }
 
-/* MENOR (base) */
-.circle3 {
-	width: 150px;
-	height: 150px;
-	background: #ff00ff;
-	bottom: 0px;
-	left: 125px;
+/* Círculos dispostos horizontalmente para rotação em grupo */
+.circle1 {
+	width: 500px;
+	height: 500px;
+	background: radial-gradient(ellipse at 30% 30%, #ff00ff, #8800aa);
+	top: 50%;
+	left: 10%;
+	transform: translateY(-50%);
 }
 
 .circle2 {
-	width: 280px;
-	height: 280px;
-	background: #6d00ff;
-	bottom: 90px;
-	left: 100px;
+	width: 600px;
+	height: 600px;
+	background: radial-gradient(ellipse at 70% 30%, #6d00ff, #3300aa);
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
 }
 
-.circle1 {
-	width: 320px;
-	height: 320px;
-	background: #ff00ff;
-	bottom: 240px;
-	left: 30px;
+.circle3 {
+	width: 400px;
+	height: 400px;
+	background: radial-gradient(ellipse at 30% 70%, #ff00ee, #aa0088);
+	top: 50%;
+	right: 10%;
+	transform: translateY(-50%);
 }
 
+/* Lado direito - Espaço para foto/elementos visuais */
+.pictureRightSide {
+	display: flex;
+	width: 50%;
+	flex: 1;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(100vh - 80px);
+}
+
+.profile-wrapper {
+	position: relative;
+	width: 300px;
+	height: 300px;
+}
 
 /* Foto de perfil */
 .profile-pic {
 	position: absolute;
-	top: -50%;
+	top: 50%;
 	left: 0;
 	width: 130%;
 	height: 130%;
 	z-index: 2;
 	display: flex;
+	transform: translateY(-50%);
 }
 
 .profile-pic img {
@@ -358,8 +419,11 @@ main {
 	padding: 0;
 	padding-left: 4rem;
 	max-width: 100vw;
+	height: 100vh;
 	margin: 0 auto;
-	background-color: #181818;
+	background-color: transparent;
+	position: relative;
+	z-index: 3;
 }
 
 /* Títulos das seções */
@@ -379,10 +443,12 @@ main {
 */
 
 footer {
-	background-color: #181818;
+	background-color: transparent;
 	color: #aeaeae;
 	padding: 2rem 0;
 	align-items: center;
+	position: relative;
+	z-index: 3;
 }
 
 .footer-content {
@@ -457,6 +523,7 @@ footer {
 */
 
 @media (max-width: 768px) {
+
 	/* Header responsivo */
 	header .container {
 		flex-direction: column;
