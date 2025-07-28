@@ -18,9 +18,7 @@
 
 html {
 	scroll-padding-top: 80px;
-	/* Espaçamento para navegação fixa */
 	scroll-behavior: smooth;
-	/* Rolagem suave entre seções */
 }
 
 body {
@@ -28,9 +26,7 @@ body {
 	line-height: 1.6;
 	color: #333;
 	background-color: #181818;
-	/* Fundo escuro principal */
 	position: relative;
-	/* Importante para permitir elementos filhos com position absolute/fixed */
 }
 
 /* Overlay escuro para garantir legibilidade do conteúdo */
@@ -45,6 +41,66 @@ body::before {
 	z-index: 1;
 	pointer-events: none;
 }
+
+/* 
+===========================================================================================
+						CLASSES REUTILIZÁVEIS
+===========================================================================================
+*/
+
+/* Transições padrão */
+.transition-standard {
+	transition: all 0.3s ease;
+}
+
+/* Gradiente padrão */
+.gradient-primary {
+	background: linear-gradient(135deg, #7300ff 0%, #ff00ee 100%);
+}
+
+/* Flex containers */
+.flex-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.flex-between {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.flex-start {
+	display: flex;
+	align-items: center;
+}
+
+/* Container centralizado */
+.center-container {
+	max-width: 1200px;
+	margin: 0 auto;
+}
+
+/* Bordas circulares */
+.circle {
+	border-radius: 50%;
+}
+
+/* Object fit */
+.fit-contain {
+	object-fit: contain;
+}
+
+.fit-cover {
+	object-fit: cover;
+}
+
+/* 
+===========================================================================================
+						COMPONENTES ESPECÍFICOS
+===========================================================================================
+*/
 
 /* Configurações básicas de tipografia */
 h1,
@@ -68,7 +124,6 @@ p {
 a {
 	text-decoration: none;
 	color: inherit;
-	transition: all 0.3s ease;
 }
 
 /* 
@@ -94,7 +149,6 @@ section {
 	background-image: linear-gradient(to right, #7300ff, #ff00ee);
 	background-clip: text;
 	-webkit-background-clip: text;
-	/* Compatibilidade WebKit */
 	color: transparent;
 }
 
@@ -103,7 +157,6 @@ section {
 	display: inline-block;
 	text-align: center;
 	cursor: pointer;
-	transition: all 0.3s ease;
 	position: relative;
 	z-index: 1;
 	border-radius: 100px;
@@ -111,6 +164,12 @@ section {
 	background-color: transparent;
 	text-decoration: none;
 	color: #aeaeae;
+}
+
+/* Aplicar transição padrão aos botões */
+.btn,
+a {
+	transition: all 0.3s ease;
 }
 
 /* Botões com efeito de borda gradiente */
@@ -163,18 +222,24 @@ header {
 	background-color: #181818;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	position: fixed;
-	/* Header fixo no topo */
 	z-index: 1000;
 	top: 0;
 	width: 100%;
-	padding: 1rem 0;
+	padding: 1rem 1rem;
 }
 
 header .container {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
 	position: relative;
+	padding: 0;
+	width: 100%;
+	max-width: none;
+}
+
+/* Lado esquerdo do header - Logo e nome */
+.header-left {
+	gap: 0.1rem;
+	flex: 0 0 auto;
+	margin-left: 9.5rem;
 }
 
 /* Logo/Nome */
@@ -183,10 +248,7 @@ header .container {
 }
 
 .logo {
-	display: flex;
-	align-items: center;
 	gap: 0.1rem;
-	margin-right: auto;
 }
 
 .logo h1 {
@@ -204,20 +266,18 @@ header .container {
 	margin: 0;
 }
 
-/* Menu de navegação */
+/* Menu de navegação - centralizado */
 nav {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
-	/* Centraliza o menu */
 }
 
 nav ul {
-	display: flex;
-	list-style: none;
 	gap: 2rem;
 	margin: 0;
 	padding: 0;
+	list-style: none;
 }
 
 nav a {
@@ -246,6 +306,83 @@ nav a::after {
 
 nav a:hover::after {
 	width: 100%;
+}
+
+/* Lado direito do header - Botões das redes sociais */
+.header-right {
+	gap: 0.5rem;
+	flex: 0 0 auto;
+	margin-right: 9.5rem;
+}
+
+/* Aplicar classes reutilizáveis */
+header .container,
+.header-left,
+.logo,
+nav ul,
+.header-right {
+	display: flex;
+	align-items: center;
+}
+
+header .container {
+	justify-content: space-between;
+}
+
+/* Botões das redes sociais no header */
+.header-btn {
+	width: 40px;
+	height: 40px;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	color: #aeaeae;
+	text-decoration: none;
+	backdrop-filter: blur(10px);
+	transition: all 0.3s ease;
+}
+
+.header-btn:hover {
+	transform: translateY(-2px);
+	border-color: rgba(115, 0, 255, 0.5);
+	box-shadow: 0 5px 15px rgba(115, 0, 255, 0.2);
+	color: white;
+}
+
+.header-btn .btn-icon {
+	font-size: 1.1rem;
+	width: 18px;
+	height: 18px;
+}
+
+/* Efeitos específicos para cada rede social no header */
+.header-btn.linkedin:hover {
+	background: rgba(0, 119, 181, 0.2);
+	border-color: rgba(0, 119, 181, 0.5);
+}
+
+.header-btn.github:hover {
+	background: rgba(51, 51, 51, 0.2);
+	border-color: rgba(255, 255, 255, 0.3);
+}
+
+.header-btn.instagram:hover {
+	background: linear-gradient(45deg, rgba(225, 48, 108, 0.2), rgba(255, 220, 128, 0.2));
+	border-color: rgba(225, 48, 108, 0.5);
+}
+
+.header-btn.cv:hover {
+	background: linear-gradient(135deg, rgba(115, 0, 255, 0.2), rgba(255, 0, 238, 0.2));
+	border-color: rgba(115, 0, 255, 0.5);
+}
+
+/* Aplicar classes reutilizáveis aos botões */
+.header-btn,
+.header-btn .btn-icon {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	object-fit: contain;
 }
 
 /* 
@@ -371,7 +508,7 @@ main {
 	transform: translateY(-50%);
 }
 
-/* Lado direito - Espaço para foto/elementos visuais */
+/* Lado direito - Círculo decorativo */
 .pictureRightSide {
 	display: flex;
 	width: 50%;
@@ -381,28 +518,49 @@ main {
 	min-height: calc(100vh - 80px);
 }
 
-.profile-wrapper {
+.profile-circle {
+	width: 70%;
+	aspect-ratio: 1;
+	border-radius: 50%;
 	position: relative;
-	width: 300px;
-	height: 300px;
-}
-
-/* Foto de perfil */
-.profile-pic {
-	position: absolute;
-	top: 50%;
-	left: 0;
-	width: 130%;
-	height: 130%;
-	z-index: 2;
+	background-color: transparent;
 	display: flex;
-	transform: translateY(-50%);
+	align-items: center;
+	justify-content: center;
+	overflow: hidden;
 }
 
-.profile-pic img {
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
+.profile-circle img {
+	width: 90%;
+	height: 90%;
+	object-fit: cover;
+	border-radius: 50%;
+	z-index: 1;
+}
+
+/* Pseudo-elemento para criar borda gradiente do círculo */
+.profile-circle::before {
+	content: '';
+	position: absolute;
+	inset: 0;
+	padding: 2px;
+	background: linear-gradient(135deg, #7300ff 0%, #ff00ee 100%);
+	border-radius: inherit;
+	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	-webkit-mask-composite: xor;
+	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+	mask-composite: exclude;
+	z-index: -1;
+}
+
+/* Fundo do círculo */
+.profile-circle::after {
+	content: '';
+	position: absolute;
+	inset: 0;
+	background-color: #181818;
+	border-radius: inherit;
+	z-index: -2;
 }
 
 
@@ -418,20 +576,34 @@ main {
 	padding: 0;
 	padding-left: 4rem;
 	max-width: 100vw;
+	min-height: 100vh;
 	margin: 0 auto;
 	background-color: transparent;
 	position: relative;
 	z-index: 3;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 /* Títulos das seções */
 .projects h2,
 .aboutMe h2,
 .contact h2 {
-	text-align: left;
+	text-align: center;
 	font-size: 2.5rem;
 	margin-bottom: 1rem;
 	color: white;
+}
+
+.section-description {
+	text-align: center;
+	max-width: 800px;
+	margin: 0 auto 3rem auto;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	color: #aeaeae;
+	opacity: 0.9;
 }
 
 /* 
@@ -473,13 +645,15 @@ main {
 	height: 200px;
 	overflow: hidden;
 	position: relative;
+	padding: 0.5rem 0.2rem 0 0.2rem;
 }
 
 .project-image img {
 	width: 100%;
 	height: 100%;
-	object-fit: cover;
+	object-fit: contain;
 	transition: transform 0.3s ease;
+	border-radius: 8px;
 }
 
 .project-card:hover .project-image img {
@@ -554,6 +728,110 @@ main {
 
 /* 
 ===========================================================================================
+			SEÇÃO CONTACT
+===========================================================================================
+*/
+
+/* Container do conteúdo Contact */
+.contact-content {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 2rem 0;
+	text-align: center;
+}
+
+/* Mensagem de agradecimento */
+.contact-message {
+	margin-bottom: 3rem;
+}
+
+.contact-message h3 {
+	color: white;
+	font-size: 1.8rem;
+	margin-bottom: 1.5rem;
+	font-weight: 600;
+}
+
+.contact-message p {
+	color: #aeaeae;
+	font-size: 1.1rem;
+	line-height: 1.7;
+	max-width: 700px;
+	margin: 0 auto;
+}
+
+/* Container dos botões de contato */
+.contact-buttons {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 1.5rem;
+	max-width: 600px;
+	margin: 0 auto;
+}
+
+/* Botões de contato */
+.contact-btn {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.8rem;
+	padding: 1rem 1.5rem;
+	background: rgba(255, 255, 255, 0.05);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	border-radius: 15px;
+	color: #aeaeae;
+	text-decoration: none;
+	font-size: 1rem;
+	font-weight: 500;
+	transition: all 0.3s ease;
+	backdrop-filter: blur(10px);
+	position: relative;
+	overflow: hidden;
+}
+
+.contact-btn:hover {
+	transform: translateY(-5px);
+	border-color: rgba(115, 0, 255, 0.5);
+	box-shadow: 0 10px 25px rgba(115, 0, 255, 0.2);
+	color: white;
+}
+
+/* Ícones dos botões */
+.btn-icon {
+	font-size: 1.3rem;
+	width: 20px;
+	height: 20px;
+	object-fit: contain;
+}
+
+/* Texto dos botões */
+.btn-text {
+	font-weight: 600;
+}
+
+/* Efeitos específicos para cada rede social */
+.contact-btn.linkedin:hover {
+	background: rgba(0, 119, 181, 0.2);
+	border-color: rgba(0, 119, 181, 0.5);
+}
+
+.contact-btn.github:hover {
+	background: rgba(51, 51, 51, 0.2);
+	border-color: rgba(255, 255, 255, 0.3);
+}
+
+.contact-btn.instagram:hover {
+	background: linear-gradient(45deg, rgba(225, 48, 108, 0.2), rgba(255, 220, 128, 0.2));
+	border-color: rgba(225, 48, 108, 0.5);
+}
+
+.contact-btn.cv:hover {
+	background: linear-gradient(135deg, rgba(115, 0, 255, 0.2), rgba(255, 0, 238, 0.2));
+	border-color: rgba(115, 0, 255, 0.5);
+}
+
+/* 
+===========================================================================================
 			SEÇÃO ABOUT ME
 ===========================================================================================
 */
@@ -590,21 +868,6 @@ main {
 /* Card largo (ocupa as duas colunas) */
 .about-card-wide {
 	grid-column: 1 / -1;
-}
-
-/* Conteúdo do card largo */
-.about-card-content {
-	display: grid;
-	grid-template-columns: 1fr 1fr;
-	gap: 3rem;
-	text-align: center;
-}
-
-/* Seção dentro do card largo */
-.about-card-section {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
 }
 
 .about-card:hover {
@@ -653,77 +916,71 @@ main {
 */
 
 footer {
-	background-color: transparent;
+	background-color: rgba(24, 24, 24, 0.3);
 	color: #aeaeae;
-	padding: 2rem 0;
+	padding: 2rem 0 1.5rem 0;
 	align-items: center;
 	position: relative;
 	z-index: 3;
+	border-top: 1px solid rgba(255, 255, 255, 0.05);
+	backdrop-filter: blur(15px);
 }
 
 .footer-content {
 	max-width: 1200px;
 	margin: 0 auto;
-	padding: 0 2rem;
+	padding: 0 4rem;
 	display: flex;
-	justify-content: space-between;
+	flex-direction: column;
 	align-items: center;
-	flex-wrap: wrap;
-	gap: 1rem;
+	gap: 1.5rem;
 }
 
-/* Links das redes sociais */
+/* Links das redes sociais no footer */
 .social-links {
 	display: flex;
-	gap: 1rem;
+	gap: 2rem;
+	justify-content: center;
+	flex-wrap: wrap;
 }
 
 .social-links a {
-	display: inline-block;
-	text-align: center;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	cursor: pointer;
 	transition: all 0.3s ease;
 	position: relative;
 	z-index: 1;
-	border-radius: 100px;
+	border-radius: 8px;
 	overflow: hidden;
 	background-color: transparent;
 	text-decoration: none;
-	color: #aeaeae;
-	padding: 15px;
-	width: 150px;
-	font-size: small;
+	color: #888;
+	padding: 0.5rem 0.8rem;
+	font-size: 0.85rem;
+	font-weight: 400;
+	border: none;
+	opacity: 0.7;
 }
 
 /* Efeito hover nos links sociais */
 .social-links a:hover {
-	color: white;
-	text-shadow: 0 0 8px #7300FF;
-	transform: translateY(-2px);
+	color: #aeaeae;
+	transform: translateY(-1px);
+	opacity: 1;
 }
 
-/* Borda gradiente nos links sociais */
-.social-links a::before {
-	content: '';
-	position: absolute;
-	inset: 0;
-	padding: 1px;
-	background: linear-gradient(135deg, #7300ff 0%, #ff00ee 100%);
-	border-radius: inherit;
-	-webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-	-webkit-mask-composite: xor;
-	mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-	mask-composite: exclude;
-	z-index: -1;
+/* Informações de copyright */
+.pageEnd {
+	text-align: center;
+	margin-top: 0.5rem;
 }
 
-.social-links a::after {
-	content: '';
-	position: absolute;
-	inset: 0;
-	background-color: #181818;
-	border-radius: inherit;
-	z-index: -2;
+.pageEnd p {
+	font-size: 0.8rem;
+	color: #666;
+	opacity: 0.6;
 }
 
 /* 
@@ -736,18 +993,39 @@ footer {
 
 	/* Header responsivo */
 	header .container {
+		display: flex;
 		flex-direction: column;
 		gap: 1rem;
 		position: static;
+		padding: 0 1rem;
+	}
+
+	.header-left {
+		order: 1;
 	}
 
 	nav {
 		position: static;
 		transform: none;
+		order: 2;
 	}
 
 	nav ul {
 		gap: 1rem;
+	}
+
+	.header-right {
+		order: 3;
+		gap: 1rem;
+	}
+
+	.header-btn {
+		width: 35px;
+		height: 35px;
+	}
+
+	.header-btn .btn-icon {
+		font-size: 1rem;
 	}
 
 	/* Seção home responsiva */
@@ -777,6 +1055,9 @@ footer {
 	.aboutMe,
 	.contact {
 		padding: 2rem;
+		min-height: 100vh;
+		justify-content: flex-start;
+		padding-top: 6rem;
 	}
 
 	/* Cards de projeto responsivos */
@@ -813,11 +1094,6 @@ footer {
 		grid-column: 1;
 	}
 
-	.about-card-content {
-		grid-template-columns: 1fr;
-		gap: 2rem;
-	}
-
 	.about-card {
 		padding: 1.5rem;
 		margin: 0;
@@ -831,9 +1107,38 @@ footer {
 		font-size: 1.2rem;
 	}
 
+	/* Contact responsivo */
+	.contact-buttons {
+		grid-template-columns: 1fr;
+		gap: 1rem;
+		padding: 0 1rem;
+	}
+
+	.contact-message {
+		margin-bottom: 2rem;
+		padding: 0 1rem;
+	}
+
+	.contact-message h3 {
+		font-size: 1.5rem;
+	}
+
 	/* Footer responsivo */
 	.footer-content {
-		flex-direction: column;
-		text-align: center;
+		padding: 0 2rem;
+		gap: 1rem;
+	}
+
+	.social-links {
+		gap: 1.5rem;
+	}
+
+	.social-links a {
+		padding: 0.4rem 0.6rem;
+		font-size: 0.8rem;
+	}
+
+	.pageEnd p {
+		font-size: 0.75rem;
 	}
 }

@@ -15,10 +15,12 @@
 	<!-- Headder with navigation menu -->
 	<header>
 		<div class="container">
-			<img class="logo-img" src="src/assets/R.png" alt="">
-			<div class="logo">
-				<h1><b>Rodrigo</b></h1>
-				<p>Faria</p>
+			<div class="header-left">
+				<img class="logo-img" src="src/assets/RodrigoFariaLogo.png" alt="">
+				<div class="logo">
+					<h1><b>Rodrigo</b></h1>
+					<p>Faria</p>
+				</div>
 			</div>
 			<nav>
 				<ul>
@@ -28,10 +30,19 @@
 					<li><a href="#contact">Contact</a></li>
 				</ul>
 			</nav>
-			<div class="logos">
-				<img class="github-logo" src="" alt="">
-				<img class="instagram-logo" src="" alt="">
-				<img class="linkedin-logo" src="" alt="">
+			<div class="header-right">
+				<a href="https://www.linkedin.com/in/rodrigo-fari" class="header-btn linkedin" target="_blank">
+					<img src="src/assets/LOGO LINKEDIN.png" alt="LinkedIn" class="btn-icon">
+				</a>
+				<a href="https://github.com/rodrigo-fari/" class="header-btn github" target="_blank">
+					<img src="src/assets/LOGO GITHUB.png" alt="GitHub" class="btn-icon">
+				</a>
+				<a href="https://www.instagram.com/rxd081/" class="header-btn instagram" target="_blank">
+					<img src="src/assets/INSTAGRAM.png" alt="Instagram" class="btn-icon">
+				</a>
+				<a href="#" class="header-btn cv" download>
+					<img src="src/assets/LOGO CV.png" alt="CV" class="btn-icon">
+				</a>
 			</div>
 		</div>
 	</header>
@@ -61,12 +72,10 @@
 				</div>
 			</div>
 
-			<!-- Div responsable to store elipses effect + Profile picture -->
+			<!-- Div responsable to store elipses effect + Profile circle -->
 			<div class="pictureRightSide">
-				<div class="profile-wrapper">
-					<div class="profile-pic">
-						<img src="src/assets/Rodrigo Faria.png" alt="Foto de Perfil">
-					</div>
+				<div class="profile-circle">
+					<img src="src/assets/MainImage.png" alt="Main Image">
 				</div>
 			</div>
 		</section>
@@ -74,11 +83,14 @@
 		<!-- Projects "Page" -->
 		<section id="projects" class="projects">
 			<h2>My Projects</h2>
+			<p class="section-description">Below you'll find a selection of key projects from my GitHub profile,
+				showcasing my dual expertise in low-level programming, algorithms, system design and modern web
+				development.</p>
 			<div class="projects-grid">
 				<!-- Project Card 1 -->
 				<div class="project-card">
 					<div class="project-image">
-						<img src="https://via.placeholder.com/300x200" alt="Projeto 1">
+						<img src="src/assets/Project 1 Image.png" alt="Projeto 1">
 					</div>
 					<div class="project-content">
 						<h3>Projeto 1</h3>
@@ -98,7 +110,7 @@
 				<!-- Project Card 2 -->
 				<div class="project-card">
 					<div class="project-image">
-						<img src="https://via.placeholder.com/300x200" alt="Projeto 2">
+						<img src="src/assets/Project 2 Image.png" alt="Projeto 2">
 					</div>
 					<div class="project-content">
 						<h3>Projeto 2</h3>
@@ -118,7 +130,7 @@
 				<!-- Project Card 3 -->
 				<div class="project-card">
 					<div class="project-image">
-						<img src="https://via.placeholder.com/300x200" alt="Projeto 3">
+						<img src="src/assets/Project 3 Image.png" alt="Projeto 3">
 					</div>
 					<div class="project-content">
 						<h3>Projeto 3</h3>
@@ -159,28 +171,19 @@
 							the design and functionality part on the front end.</p>
 					</div>
 
-					<!-- Card 3: Philosophy & Approach (Wide) -->
+					<!-- Card 3: My Perspective & Focus (Wide) -->
 					<div class="about-card about-card-wide">
-						<div class="about-card-content">
-							<div class="about-card-section">
-								<div class="about-card-icon">🚀</div>
-								<h3>Philosophy</h3>
-								<p>Beyond the technical side, my personal projects aim to <span
-										class="highlight">challenge the
-										status quo</span>, using technology as a tool to reconnect people and inspire
-									collective
-									evolution.</p>
-							</div>
-							<div class="about-card-section">
-								<div class="about-card-icon">⭐</div>
-								<h3>Approach</h3>
-								<p>While perfection may be unattainable, I focus on delivering the highest quality my
-									current
-									skills allow, always striving to <span class="highlight">improve with each
-										project</span> I
-									undertake.</p>
-							</div>
-						</div>
+						<div class="about-card-icon">⭐</div>
+						<h3>My Perspective & Focus</h3>
+						<p>Beyond the technical side, my personal projects aim to <span class="highlight">challenge the
+								status quo</span>, using technology as a tool to reconnect people and inspire
+							collective
+							evolution. While perfection may be unattainable, I focus on delivering the highest quality
+							my
+							current
+							skills allow, always striving to <span class="highlight">improve with each
+								project</span> I
+							undertake.</p>
 					</div>
 				</div>
 			</div>
@@ -188,9 +191,35 @@
 
 		<!-- Contacts "Page" -->
 		<section id="contact" class="contact">
-			<h2>Contact</h2>
+			<h2>Get In Touch</h2>
+			<p class="section-description">I'm excited about the possibility of working together and contributing to
+				innovative projects. Let's connect and explore how we can create something amazing!</p>
 			<div class="contact-content">
-				<!-- Contact information -->
+				<div class="contact-message">
+					<h3>Ready to collaborate?</h3>
+					<p>Thank you for taking the time to explore my portfolio! I'm passionate about technology and always
+						eager to take on new challenges. Whether you're looking for a dedicated developer for your team
+						or have an exciting project in mind, I'd love to hear from you.</p>
+				</div>
+
+				<div class="contact-buttons">
+					<a href="https://www.linkedin.com/in/rodrigo-fari" class="contact-btn linkedin" target="_blank">
+						<img src="src/assets/LOGO LINKEDIN.png" alt="LinkedIn" class="btn-icon">
+						<span class="btn-text">LinkedIn</span>
+					</a>
+					<a href="https://github.com/rodrigo-fari/" class="contact-btn github" target="_blank">
+						<img src="src/assets/LOGO GITHUB.png" alt="GitHub" class="btn-icon">
+						<span class="btn-text">GitHub</span>
+					</a>
+					<a href="https://www.instagram.com/rxd081/" class="contact-btn instagram" target="_blank">
+						<img src="src/assets/INSTAGRAM.png" alt="Instagram" class="btn-icon">
+						<span class="btn-text">Instagram</span>
+					</a>
+					<a href="#" class="contact-btn cv" download>
+						<img src="src/assets/LOGO CV.png" alt="CV" class="btn-icon">
+						<span class="btn-text">Download CV</span>
+					</a>
+				</div>
 			</div>
 		</section>
 	</main>
