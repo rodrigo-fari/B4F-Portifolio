@@ -1,0 +1,2 @@
+Remover espaço entre as linhas no título principal
+Remover espaço entre o conteudo da homepage e a foto de Perfil

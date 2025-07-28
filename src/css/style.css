@@ -150,10 +150,14 @@ header .container {
 }
 
 /* Logo/Nome */
+.logo-img {
+	width: 35px;
+}
+
 .logo {
 	display: flex;
 	align-items: center;
-	gap: 0.5rem;
+	gap: 0.1rem;
 	margin-right: auto;
 }
 
@@ -162,6 +166,7 @@ header .container {
 	font-size: 1.3rem;
 	font-weight: 1000;
 	margin: 0;
+	padding-left: 10px;
 }
 
 .logo p {
@@ -230,12 +235,11 @@ main {
 ==================================================
 */
 
-.home {
-	background-color: #181818;
+.home {	background-color: #181818;
 	color: white;
 	display: flex;
 	align-items: center;
-	padding: 20vh 4rem 22vh 4rem;
+	padding: 20vh 4rem 20vh 10rem;
 	min-height: 80vh;
 	gap: 2rem;
 }
@@ -260,6 +264,7 @@ main {
 	color: #aeaeae;
 	font-size: 1.3rem;
 	margin-bottom: 2rem;
+	margin-top: 1rem;
 	max-width: 800px;
 }
 
@@ -274,6 +279,7 @@ main {
 /* Lado direito - Espaço para foto/elementos visuais */
 .pictureRightSide {
 	display: flex;
+	padding-top: 200px;
 	width: 50%;
 	flex: 1;
 	align-items: center;
@@ -282,63 +288,61 @@ main {
 }
 
 .profile-wrapper {
-  position: relative;
-  width: 300px;
-  height: 300px;
+	position: relative;
+	width: 300px;
+	height: 300px;
 }
 
 /* Círculos com blur */
 .blur-circle {
-  position: absolute;
-  border-radius: 50%;
-  filter: blur(80px);
-  opacity: 0.6;
-  z-index: 0;
+	position: absolute;
+	border-radius: 50%;
+	filter: blur(80px);
+	opacity: 0.6;
+	z-index: 0;
 }
 
 /* MENOR (base) */
 .circle3 {
-  width: 150px;
-  height: 150px;
-  background: #ff00ff;
-  bottom: 0px;
-  left: 125px;
+	width: 150px;
+	height: 150px;
+	background: #ff00ff;
+	bottom: 0px;
+	left: 125px;
 }
 
 .circle2 {
-  width: 280px;
-  height: 280px;
-  background: #6d00ff;
-  bottom: 90px;
-  left: 100px;
+	width: 280px;
+	height: 280px;
+	background: #6d00ff;
+	bottom: 90px;
+	left: 100px;
 }
 
 .circle1 {
-  width: 320px;
-  height: 320px;
-  background: #ff00ff;
-  bottom: 240px;
-  left: 30px;
+	width: 320px;
+	height: 320px;
+	background: #ff00ff;
+	bottom: 240px;
+	left: 30px;
 }
 
 
 /* Foto de perfil */
 .profile-pic {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 130%;
-  height: 130%;
-  z-index: 2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+	position: absolute;
+	top: -50%;
+	left: 0;
+	width: 130%;
+	height: 130%;
+	z-index: 2;
+	display: flex;
 }
 
 .profile-pic img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
 }
 
 
@@ -353,7 +357,6 @@ main {
 .contact {
 	padding: 0;
 	padding-left: 4rem;
-	height: 100vh; /* TODO: Remover altura fixa ao adicionar conteúdo */
 	max-width: 100vw;
 	margin: 0 auto;
 	background-color: #181818;
