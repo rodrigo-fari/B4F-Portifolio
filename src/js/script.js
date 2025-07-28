@@ -37,11 +37,15 @@ document.addEventListener('DOMContentLoaded', function () {
 			container.style.transform = `rotate(${globalRotation}deg)`;
 		}
 
-		// Calcular variações de escala baseadas no scroll
-		// Usando diferentes frequências para cada círculo
-		const scale1 = 0.8 + (Math.sin(scrollProgress * Math.PI * 4) * 0.3); // Varia entre 0.5 e 1.1
-		const scale2 = 0.9 + (Math.sin(scrollProgress * Math.PI * 3) * 0.2); // Varia entre 0.7 e 1.1
-		const scale3 = 0.7 + (Math.sin(scrollProgress * Math.PI * 5) * 0.4); // Varia entre 0.3 e 1.1
+		// Calcular variações de escala baseadas no scroll com transições mais suaves
+		// Usando diferentes frequências para cada círculo e começando do estado inicial
+		const baseScale1 = 1.0;
+		const baseScale2 = 1.0;
+		const baseScale3 = 1.0;
+
+		const scale1 = baseScale1 + (Math.sin(scrollProgress * Math.PI * 2) * 0.15); // Varia suavemente
+		const scale2 = baseScale2 + (Math.sin((scrollProgress * Math.PI * 2) + Math.PI / 3) * 0.1); // Offset diferente
+		const scale3 = baseScale3 + (Math.sin((scrollProgress * Math.PI * 2) + Math.PI / 1.5) * 0.2); // Outro offset
 
 		// Aplicar escalas diferentes mantendo as posições originais
 		circle1.style.transform = `translateY(-50%) scale(${scale1})`;
@@ -49,9 +53,19 @@ document.addEventListener('DOMContentLoaded', function () {
 		circle3.style.transform = `translateY(-50%) scale(${scale3})`;
 	}
 
+	// Usar requestAnimationFrame para animações mais suaves
+	let ticking = false;
+	function requestTick() {
+		if (!ticking) {
+			requestAnimationFrame(animateCircles);
+			ticking = true;
+		}
+	}
+
 	// Adicionar listener de scroll 
 	window.addEventListener('scroll', function () {
-		animateCircles();
+		requestTick();
+		ticking = false;
 	});
 
 	// Chamar uma vez para definir posição inicial

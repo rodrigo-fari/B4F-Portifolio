@@ -338,9 +338,8 @@ main {
 .blur-circle {
 	position: absolute;
 	border-radius: 50%;
-	filter: blur(80px);
-	opacity: 0.6;
-	transition: all 0.3s ease-out;
+	filter: blur(120px);
+	opacity: 0.3;
 	transform-origin: center center;
 }
 
@@ -348,7 +347,7 @@ main {
 .circle1 {
 	width: 500px;
 	height: 500px;
-	background: radial-gradient(ellipse at 30% 30%, #ff00ff, #8800aa);
+	background: radial-gradient(ellipse at 30% 30%, #cc44ff, #7700bb);
 	top: 50%;
 	left: 10%;
 	transform: translateY(-50%);
@@ -357,7 +356,7 @@ main {
 .circle2 {
 	width: 600px;
 	height: 600px;
-	background: radial-gradient(ellipse at 70% 30%, #6d00ff, #3300aa);
+	background: radial-gradient(ellipse at 70% 30%, #8844ff, #4400cc);
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
@@ -366,7 +365,7 @@ main {
 .circle3 {
 	width: 400px;
 	height: 400px;
-	background: radial-gradient(ellipse at 30% 70%, #ff00ee, #aa0088);
+	background: radial-gradient(ellipse at 30% 70%, #ff44cc, #bb0088);
 	top: 50%;
 	right: 10%;
 	transform: translateY(-50%);
@@ -419,7 +418,6 @@ main {
 	padding: 0;
 	padding-left: 4rem;
 	max-width: 100vw;
-	height: 100vh;
 	margin: 0 auto;
 	background-color: transparent;
 	position: relative;
@@ -434,6 +432,218 @@ main {
 	font-size: 2.5rem;
 	margin-bottom: 1rem;
 	color: white;
+}
+
+/* 
+===========================================================================================
+			SEÇÃO PROJECTS - CARDS DE PROJETOS
+===========================================================================================
+*/
+
+/* Grid de projetos */
+.projects-grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+	gap: 2rem;
+	padding: 2rem 0;
+	max-width: 1200px;
+	margin: 0 auto;
+	justify-content: center;
+}
+
+/* Card individual do projeto */
+.project-card {
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 15px;
+	overflow: hidden;
+	transition: all 0.3s ease;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+}
+
+.project-card:hover {
+	transform: translateY(-10px);
+	box-shadow: 0 20px 40px rgba(115, 0, 255, 0.2);
+	border-color: rgba(115, 0, 255, 0.3);
+}
+
+/* Imagem do projeto */
+.project-image {
+	width: 100%;
+	height: 200px;
+	overflow: hidden;
+	position: relative;
+}
+
+.project-image img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image img {
+	transform: scale(1.05);
+}
+
+/* Conteúdo do card */
+.project-content {
+	padding: 1.5rem;
+}
+
+.project-content h3 {
+	color: white;
+	font-size: 1.5rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+
+.project-content p {
+	color: #aeaeae;
+	line-height: 1.6;
+	margin-bottom: 1.5rem;
+	font-size: 0.95rem;
+}
+
+/* Tags de tecnologias */
+.project-tech {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+	background: linear-gradient(135deg, #7300ff 0%, #ff00ee 100%);
+	color: white;
+	padding: 0.3rem 0.8rem;
+	border-radius: 20px;
+	font-size: 0.8rem;
+	font-weight: 500;
+}
+
+/* Links do projeto */
+.project-links {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.btn-project {
+	display: inline-block;
+	padding: 0.7rem 1.5rem;
+	border: 1px solid rgba(115, 0, 255, 0.5);
+	border-radius: 25px;
+	color: #aeaeae;
+	text-decoration: none;
+	font-size: 0.9rem;
+	font-weight: 500;
+	transition: all 0.3s ease;
+	background: transparent;
+	text-align: center;
+	width: 60%;
+}
+
+.btn-project:hover {
+	background: linear-gradient(135deg, #7300ff 0%, #ff00ee 100%);
+	color: white;
+	transform: translateY(-2px);
+	box-shadow: 0 5px 15px rgba(115, 0, 255, 0.3);
+}
+
+/* 
+===========================================================================================
+			SEÇÃO ABOUT ME
+===========================================================================================
+*/
+
+/* Container do conteúdo About Me */
+.about-content {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 2rem 0;
+}
+
+/* Grid de cards About Me */
+.about-cards {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto;
+	gap: 2rem;
+	padding: 1rem 0;
+	max-width: 800px;
+	margin: 0 auto;
+}
+
+/* Card individual About Me */
+.about-card {
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 15px;
+	padding: 2rem;
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	backdrop-filter: blur(10px);
+	transition: all 0.3s ease;
+	text-align: center;
+}
+
+/* Card largo (ocupa as duas colunas) */
+.about-card-wide {
+	grid-column: 1 / -1;
+}
+
+/* Conteúdo do card largo */
+.about-card-content {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 3rem;
+	text-align: center;
+}
+
+/* Seção dentro do card largo */
+.about-card-section {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.about-card:hover {
+	transform: translateY(-5px);
+	border-color: rgba(115, 0, 255, 0.3);
+	box-shadow: 0 15px 35px rgba(115, 0, 255, 0.15);
+}
+
+/* Ícone do card */
+.about-card-icon {
+	font-size: 2.5rem;
+	margin-bottom: 1rem;
+	display: block;
+}
+
+/* Título do card */
+.about-card h3 {
+	color: white;
+	font-size: 1.3rem;
+	margin-bottom: 1rem;
+	font-weight: 600;
+}
+
+/* Texto do card */
+.about-card p {
+	color: #aeaeae;
+	font-size: 1rem;
+	line-height: 1.6;
+	margin-bottom: 0;
+	text-align: left;
+}
+
+/* Destaque para palavras importantes */
+.about-card .highlight {
+	background: linear-gradient(135deg, #7300ff 0%, #ff00ee 100%);
+	background-clip: text;
+	-webkit-background-clip: text;
+	color: transparent;
+	font-weight: 600;
 }
 
 /* 
@@ -560,6 +770,65 @@ footer {
 		flex-direction: column;
 		align-items: center;
 		gap: 1rem;
+	}
+
+	/* Seções principais responsivas */
+	.projects,
+	.aboutMe,
+	.contact {
+		padding: 2rem;
+	}
+
+	/* Cards de projeto responsivos */
+	.projects-grid {
+		grid-template-columns: 1fr;
+		gap: 1.5rem;
+		padding: 1rem 0;
+	}
+
+	.project-card {
+		margin: 0 auto;
+		max-width: 400px;
+	}
+
+	.project-links {
+		flex-direction: column;
+	}
+
+	.btn-project {
+		min-width: unset;
+		flex: unset;
+	}
+
+	/* About Me responsivo */
+	.about-cards {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		gap: 1.5rem;
+		padding: 0;
+		margin: 0 1rem;
+	}
+
+	.about-card-wide {
+		grid-column: 1;
+	}
+
+	.about-card-content {
+		grid-template-columns: 1fr;
+		gap: 2rem;
+	}
+
+	.about-card {
+		padding: 1.5rem;
+		margin: 0;
+	}
+
+	.about-card-icon {
+		font-size: 2rem;
+	}
+
+	.about-card h3 {
+		font-size: 1.2rem;
 	}
 
 	/* Footer responsivo */
