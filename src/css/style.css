@@ -645,7 +645,7 @@ main {
 	height: 200px;
 	overflow: hidden;
 	position: relative;
-	padding: 0.5rem 0.2rem 0 0.2rem;
+	padding: 1rem 0.2rem 0 0.2rem;
 }
 
 .project-image img {
