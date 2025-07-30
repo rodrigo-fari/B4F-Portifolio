@@ -883,6 +883,13 @@ main {
 	display: block;
 }
 
+/* Estilo para as imagens dos emojis */
+.emoji-icon {
+	width: 2.5rem;
+	height: 2.5rem;
+	object-fit: contain;
+}
+
 /* Título do card */
 .about-card h3 {
 	color: white;
@@ -1101,6 +1108,11 @@ footer {
 
 	.about-card-icon {
 		font-size: 2rem;
+	}
+
+	.emoji-icon {
+		width: 2rem;
+		height: 2rem;
 	}
 
 	.about-card h3 {
