@@ -1,5 +1,18 @@
 // Efeito de rotação dos círculos de fundo baseado no scroll
 document.addEventListener('DOMContentLoaded', function () {
+	// Adiciona alerta ao clicar nos botões de download do currículo
+	function addCurriculumAlert() {
+		// Seleciona todos os botões de CV (header e contato)
+		const cvButtons = document.querySelectorAll('a.cv');
+		cvButtons.forEach(btn => {
+			btn.addEventListener('click', function (e) {
+				e.preventDefault();
+				alert("I'm truly sorry, but my resume is not available for download yet. I'm currently working on it to ensure it meets your expectations and provides all the information you need. Thank you for your interest and understanding!");
+			});
+		});
+	}
+
+	addCurriculumAlert();
 	// Criar os círculos de fundo
 	const backgroundCircles = document.createElement('div');
 	backgroundCircles.className = 'background-circles';
